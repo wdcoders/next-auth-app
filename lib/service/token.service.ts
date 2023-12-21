@@ -8,6 +8,7 @@ export const generateToken = async (user: IUser) => {
 	const token = await jwt.sign({ userId: user._id }, AUTH, {
 		expiresIn: "2d",
 	});
+	return token;
 };
 
 export const verifyToken = async (token: string) => {
